@@ -6,13 +6,7 @@ import time
 
 import requests
 
-# api_key in CAM
-api_key = 'HvBpoyVjwUGtRAsLeksJFuvzfDiInYrqYfrcGKLJbwVb'
-# api_secret in CAM
-api_secret = '4cLTPWpakkXY5XfqkFZAqGSnLin2r1CYrRqgB8OaF08='
-
-url_host = 'http://camprod.org'  # CAM domain
-url_prefix = url_host + "/api/v1"
+from configuration import api_key, api_secret, url_prefix
 
 
 def gen_timestamp():
@@ -58,6 +52,8 @@ def api_request(method, path, data=None):
         print("get response", resp_data)
     except BaseException as e:
         print("get error response", resp.text)
+        return None
+    return resp_data
 
 
 def get_demo():
