@@ -46,6 +46,14 @@ def encrypt(public_key, plain_text):
     return rsa_text
 
 
+'''
+exchange:   exchange symbol
+alias:      trade account alias
+exchange_mom_sub:   account in exchange is mom or sub
+exchange_api_key:   real api key in exchange
+exchange_api_secret: real api secret in exchange
+proxy_external_ip:  external ip of proxy 
+'''
 def create_trade_account(exchange, alias, exchange_mom_sub, exchange_api_key=None, exchange_api_secret=None,
                          proxy_external_ip=None):
     post_body = {
